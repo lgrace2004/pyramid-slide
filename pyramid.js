@@ -1,26 +1,27 @@
 
-/**
- * determineHeightAndThenDrawPyramid
- *
- * Determines the current value that the user has typed in the 'How high?' text-box,
- * and then draws a pyramid with that height.
- */
 function determineHeightAndThenDrawPyramid() {
-
     // just so we know we're here
     console.log("someone invoked the determineHeightAndThenDrawPyramid function!");
     // figure out the height the user typed (replace the "5" below)
     var heightStr = document.getElementById('height').value;
     var height = parseInt(heightStr);
+    console.log("height",height)
     // draw the pyramid with the given height
     drawPyramid(height);
 }
+
+
 // hook up the button's click event to our determineHeightAndThenDrawPyramid function
-var button = document.getElementById("thatbutton");
-button.addEventListener("click", function(event) {
+//var button = document.getElementById("thatbutton");
+//button.addEventListener("click", function(event) {
     //if (event.keycode == 13){    //13 is enter key
-        determineHeightAndThenDrawPyramid()
+        //determineHeightAndThenDrawPyramid()
+//});
+document.getElementById("height").addEventListener("input",function(event) {
+
+    determineHeightAndThenDrawPyramid()
 });
+//console.log(high);
 
 //SYMBOL CHANGE
 document.getElementById("symbol").addEventListener("change", function(event) {
