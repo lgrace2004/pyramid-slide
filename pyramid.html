@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #pyramid {
+            line-height: 0;
+            font-size: 30px;
+        }
+
+        body {
+            font-family: "Courier New", monospace;
+            text-align: center;
+        }
+    </style>
+</head>
+<body >
+
+
+    <textarea style=background-color:lightblue;font-size:60px;text-align:center>Pyramid Slide</textarea>
+    <form>Brick Symbol:
+        <select id = "symbol">
+            <option name="option" value="#">#</option>
+            <option name="option" value="@">@</option>
+            <option name="option" value="$">$</option>
+            <option name="option" value="X">X</option>
+    </select>
+
+</form>
+
+
+
+
+    <br>
+
+    <label>How high?</label>
+    <input type="text" id="height"/>
+    <br><br>
+    <button id='thatbutton'>Draw a pyramid</button>
+
+    <br><br>
+
+    <div id="pyramid"></div>
+
+    <script src="pyramid.js"></script>
+</body>
+</html>
