@@ -1,27 +1,9 @@
+//HEIGHT CHANGE
+determineHeightAndThenDrawPyramid()
 
-function determineHeightAndThenDrawPyramid() {
-    // just so we know we're here
-    console.log("someone invoked the determineHeightAndThenDrawPyramid function!");
-    // figure out the height the user typed (replace the "5" below)
-    var heightStr = document.getElementById('height').value;
-    var height = parseInt(heightStr);
-    console.log("height",height)
-    // draw the pyramid with the given height
-    drawPyramid(height);
-}
-
-
-// hook up the button's click event to our determineHeightAndThenDrawPyramid function
-//var button = document.getElementById("thatbutton");
-//button.addEventListener("click", function(event) {
-    //if (event.keycode == 13){    //13 is enter key
-        //determineHeightAndThenDrawPyramid()
-//});
 document.getElementById("height").addEventListener("input",function(event) {
-
     determineHeightAndThenDrawPyramid()
 });
-//console.log(high);
 
 //SYMBOL CHANGE
 document.getElementById("symbol").addEventListener("change", function(event) {
@@ -29,10 +11,22 @@ document.getElementById("symbol").addEventListener("change", function(event) {
 });
 
 
+function determineHeightAndThenDrawPyramid() {
+    // just so we know we're here
+
+    // figure out the height the user typed (replace the "5" below)
+    var heightStr = document.getElementById('height').value;
+    var height = parseInt(heightStr);
+    document.getElementById('heightlabel').innerHTML=height;
+
+    // draw the pyramid with the given height
+    drawPyramid(height);
+}
+
  function drawPyramid(height) {
      // get symbol
      var symbol = document.getElementById("symbol").value;
-     console.log(symbol);
+
      // before drawing, clear the old content
      document.getElementById("pyramid").innerHTML="";
 
@@ -46,7 +40,7 @@ document.getElementById("symbol").addEventListener("change", function(event) {
          for (var i = 0; i < numSpaces; i++) {
              rowStr += ".";
          }
-         //use symbol to determine which symbol to use
+         //use 'symbol' to determine which symbol to use
          for (var i = 0; i < numBricks; i++) {
              rowStr += symbol;
          }
@@ -61,4 +55,9 @@ document.getElementById("symbol").addEventListener("change", function(event) {
         // insert the paragraph as a child of the container <div>
         document.getElementById("pyramid").appendChild(rowElem);
     }
+}
+
+function mouseOver() {
+    document.getElementById("symbol").style.color = "red";
+
 }

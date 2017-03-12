@@ -5,47 +5,78 @@
         #pyramid {
             line-height: 0;
             font-size: 30px;
+            background-color: #F8F8F8;
         }
 
         body {
             font-family: "Courier New", monospace;
             text-align: center;
+            border: 5px solid lightgray;
+            padding: 5px;
+            background-color: whitesmoke;
+            width:800px;
+            margin:100px;
+            border-radius:5px;
+            margin: 0 auto;
+        }
+        .input {
+            background-color: lightgray;
+            height: 80px;
+
+
+
+
+
+
+        }
+        h1 {
+             background-color: #a22a9e;
+             font-style: Serif;
+             padding:20px;
+             text-align: center;
+             color: whitesmoke;
+             border-radius: 5px;
+             height: 60px
+        }
+        .bold {
+            font-weight: bold;
+
+        }
+
+        .below {
+            border: 2px solid #a22a9e;
+            border-radius: 5px;
+            width: 600px;
+            margin: 0 auto;
+
         }
     </style>
 </head>
 <body >
 
-    <textarea style=background-color:lightblue;font-size:60px;text-align:center>Pyramid Slide</textarea>
-
-    <form>Brick Symbol:
-        <select id = "symbol">
-            <option name="option" value="#">#</option>
-            <option name="option" value="@">@</option>
-            <option name="option" value="$">$</option>
-            <option name="option" value="X">X</option>
-    </select>
-    How High?
-
-    <input id="height" name="height" type="range" min="1" max="15" value="5" data-show-value="true"/>
-    <output for="height" onforminput="value = height.valueAsNumber;"></output>
-    </form>
+    <h1>Pyramid Slide</h1>
     <br>
+    <div class = "below">
+        <div class="input"><br>Brick Symbol:
+            <select id = "symbol" onmouseover="mouseOver()">
+                <option class="bold" name="option" value="#">#</option>
+                <option class="bold" name="option" value="@">@</option>
+                <option class="bold" name="option" value="$">$</option>
+                <option class="bold" name="option" value="X">X</option>
+
+            </select>
+            &nbsp; &nbsp; How High?
+            <input id="height" name="height" type="range" min="1" max="25" value="5" autofocus/>
+
+            <span class = "bold" id="heightlabel"></span>
 
 
+        </div>
 
-    <br>
-<!--
-    <label>How high?</label>
-    <input type="text" id="height"/>
-    <br><br>
-
-    <button id='thatbutton'>Draw a pyramid</button>
-    -->
-
-    <br><br>
-
-    <div id="pyramid"></div>
+        <div id="pyramid"></div>
+    </div>
 
     <script src="pyramid.js"></script>
+
 </body>
 </html>
